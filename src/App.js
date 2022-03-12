@@ -2,6 +2,7 @@ import React, { useRef, useState } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
 import {Scene} from './Model'
 import { Suspense } from "react";
+import { OrbitControls } from '@react-three/drei'
 
 function Box(props) {
   // This reference gives us direct access to the THREE.Mesh object
@@ -29,6 +30,7 @@ function Box(props) {
 export default function App() {
   return (
     <Canvas>
+      <OrbitControls/>
       <ambientLight intensity={0.5} />
       <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
       <pointLight position={[-10, -10, -10]} />
