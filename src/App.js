@@ -28,6 +28,16 @@ function Box(props) {
 }
 
 export default function App() {
+
+  const [startPlay, setStartPlay] = useState(false);
+
+  function changePlay() {
+    if (startPlay === false) {
+      setStartPlay(true)
+    } else {
+      setStartPlay(false)
+    }
+  }
   return (
     <Canvas>
       <OrbitControls/>
