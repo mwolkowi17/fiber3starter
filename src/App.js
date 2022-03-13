@@ -32,11 +32,12 @@ export default function App() {
   const [startPlay, setStartPlay] = useState(false);
 
   function changePlay() {
-    if (startPlay === false) {
+    /*if (startPlay === false) {
       setStartPlay(true)
     } else {
       setStartPlay(false)
-    }
+    }*/
+    setStartPlay(true);
   }
   return (
     <Canvas>
@@ -47,7 +48,7 @@ export default function App() {
       {/*<Box position={[-1.2, 0, 0]} />*/}
       {/*<Box position={[1.2, 0, 0]} />*/}
       <Suspense fallback={null}>
-      <Scene />
+      <Scene play={changePlay}  ifPlay={startPlay}/>
       </Suspense>
     </Canvas>
   )
