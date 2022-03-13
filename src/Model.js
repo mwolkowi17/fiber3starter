@@ -29,7 +29,7 @@ export function Scene(props) {
 
   return (
     <>
-      <primitive object={gltfcopy} scale={[0.8,0.8,0.8]} position={[0,0,0]} onDoubleClick={props.play}  />
+      <primitive object={gltfcopy} scale={[0.8,0.8,0.8]} position={[0,0,0]} onClick={props.play}  />
     </>
   )
 }
