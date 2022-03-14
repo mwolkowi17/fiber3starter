@@ -32,12 +32,12 @@ export default function App() {
   const [startPlay, setStartPlay] = useState(false);
 
   function changePlay() {
-    /*if (startPlay === false) {
+    if (startPlay === false) {
       setStartPlay(true)
     } else {
       setStartPlay(false)
-    }*/
-    setStartPlay(true);
+    }
+    //setStartPlay(true);
   }
   return (
     <Canvas>

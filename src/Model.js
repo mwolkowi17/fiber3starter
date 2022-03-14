@@ -13,9 +13,9 @@ export function Scene(props) {
     if (gltf) {
       mixer.current = new THREE.AnimationMixer(gltfcopy)
       const action = mixer.current.clipAction(gltf.animations[0])
-      console.log(gltf.animations)
+      //console.log(gltf.animations)
       if (props.ifPlay) {
-        console.log('played');
+        //console.log('played');
         action.play()
       }
 
