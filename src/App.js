@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
 import {Scene} from './Model'
 import { Suspense } from "react";
-import { OrbitControls } from '@react-three/drei'
+import { OrbitControls,Html } from '@react-three/drei'
 
 function Box(props) {
   // This reference gives us direct access to the THREE.Mesh object
@@ -29,7 +29,15 @@ function Box(props) {
 
 export default function App() {
 
+
+
   const [startPlay, setStartPlay] = useState(false);
+
+  function Loader() {
+    //const { progress } = useProgress()
+    //return <Html center style={{ color: 'white' }}>{progress} % loaded</Html>
+    return <Html center style={{ color: 'white' }}>loading...</Html>
+  }
 
   function changePlay() {
     if (startPlay === false) {
@@ -47,7 +55,7 @@ export default function App() {
       <pointLight position={[-10, -10, -10]} />
       {/*<Box position={[-1.2, 0, 0]} />*/}
       {/*<Box position={[1.2, 0, 0]} />*/}
-      <Suspense fallback={null}>
+      <Suspense fallback={<Loader />}>
       <Scene play={changePlay}  ifPlay={startPlay}/>
       </Suspense>
     </Canvas>
